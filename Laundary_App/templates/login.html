@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login to Laundry Service</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  {% comment %} fahgejruweiwquiewyuwiqeawey {% endcomment %}
+  <body>
+    {% block content %}
+    <div class="container">
+      <h1>🔑 Client Login</h1>
+
+      <form action="" method="POST">
+        <div class="form-group">
+          <label for="username">Username or Email</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <a href="{% url 'dashboard' %}" class="signup-button">Login</a>
+
+        <p class="login-link">
+          Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>
+        </p>
+        <p class="login-link">
+          <a href="">Forgot your password?</a>
+        </p>
+      </form>
+    </div>
+    {% endblock content %}
+  </body>
+</html>

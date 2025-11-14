@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartWash Laundry - Pricing</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+  </head>
+  <body>
+    <!-- 🧺 Header -->
+    <header class="navbar">
+      <div class="logo">SmartWash Laundry</div>
+      <ul class="nav-links">
+        <li><a href="{% url 'landing' %}">Home</a></li>
+        <li><a href="{% url 'dashboard' %}">dashboards</a></li>
+        <li><a href="{% url 'service' %}">Services</a></li>
+        <li><a href="{% url 'pricing' %}">Pricing</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'logout' %}" class="logout-btn">logout</a></li>
+      </ul>
+    </header>
+
+    <!-- 💰 Pricing Section -->
+    <section class="pricing">
+      <h2>Our Prices</h2>
+      <table>
+        <tr>
+          <th>Service</th>
+          <th>Price (₦)</th>
+        </tr>
+        <tr>
+          <td>Washing (per kg)</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>Ironing (per cloth)</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>Dry Cleaning (per item)</td>
+          <td>800</td>
+        </tr>
+        <tr>
+          <td>Pickup & Delivery</td>
+          <td>Free</td>
+        </tr>
+      </table>
+    </section>
+
+    {% comment %} new pricing {% endcomment %}
+
+    <section class="pricing-cards-section">
+      <h2>Our Pricing Plans</h2>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3>Washing (per kg)</h3>
+          <p class="price">₦500</p>
+          <ul>
+            <li>Includes detergent & softener</li>
+            <li>Fast 24-hour service</li>
+          </ul>
+          <a href="{% url 'signup' %}" class="cta-btn">Book Now</a>
+        </div>
+        <div class="pricing-card recommended">
+          <h3>Ironing (per cloth)</h3>
+          <p class="price">₦200</p>
+          <ul>
+            <li>Neatly pressed & folded</li>
+            <li>Quick delivery available</li>
+          </ul>
+          <a href="{% url 'signup' %}" class="cta-btn">Book Now</a>
+          <span class="badge">Most Popular</span>
+        </div>
+        <div class="pricing-card">
+          <h3>Dry Cleaning (per item)</h3>
+          <p class="price">₦800</p>
+          <ul>
+            <li>Delicate fabrics care</li>
+            <li>Eco-friendly solvents</li>
+          </ul>
+          <a href="{% url 'signup' %}" class="cta-btn">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💬 Contact Section -->
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <p>📍 Damaturu, Yobe State, Nigeria</p>
+      <p>📧 info@smartwash.com | ☎️ +234 9162260134</p>
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+      </div>
+    </section>
+
+    <!-- 🦶 Footer -->
+    <footer>
+      <p>&copy; 2025 SmartWash Laundry. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

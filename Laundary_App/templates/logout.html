@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logged Out - SmartWash Laundry</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    {% block content %}
+    <div class="container">
+      <h1>👋 You are Logged Out</h1>
+      <p>
+        Thank you for using SmartWash Laundry. You have successfully logged out.
+      </p>
+
+      <div class="logout-actions">
+        <a href="{% url 'landing' %}" class="action-button">Go to Home</a>
+        <a href="{% url 'login' %}" class="action-button login-btn"
+          >Login Again</a
+        >
+      </div>
+    </div>
+    {% endblock content %}
+  </body>
+</html>

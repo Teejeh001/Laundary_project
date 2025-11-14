@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartWash Laundry - Services</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+  </head>
+  <body>
+    <!-- 🧺 Header -->
+    <header class="navbar">
+      <div class="logo">SmartWash Laundry</div>
+      <ul class="nav-links">
+        <li><a href="{% url 'landing' %}">Home</a></li>
+        <li><a href="{% url 'dashboard' %}">dashboards</a></li>
+        <li><a href="{% url 'service' %}">Services</a></li>
+        <li><a href="{% url 'pricing' %}">Pricing</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'logout' %}" class="logout-btn">logout</a></li>
+      </ul>
+    </header>
+
+    <!-- 🧩 Services Section -->
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card">
+          <img src="{% static 'images/wash.jpg' %}" alt="Washing" />
+          <h3>Washing</h3>
+          <p>Expert washing for all fabric types using quality detergents.</p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/iron.jpg' %}" alt="Ironing" />
+          <h3>Ironing</h3>
+          <p>Perfectly pressed clothes — neat, clean, and wrinkle-free.</p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/sanitize.jpg' %}" alt="Sanitization" />
+          <h3>Sanitization</h3>
+          <p>
+            Kill germs, bacteria, and allergens, essential for hospital and
+            hotel linens.
+          </p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/dry.jpg' %}" alt="Dry Cleaning" />
+          <h3>Dry Cleaning</h3>
+          <p>
+            Professional dry-cleaning for suits, gowns, and delicate fabrics.
+          </p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/pickup.jpg' %}" alt="Pickup & Delivery" />
+          <h3>Pickup & Delivery</h3>
+          <p>We collect, clean, and deliver right to your doorstep.</p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/stain.jpg' %}" alt="Stain Removal" />
+          <h3>Stain Removal</h3>
+          <p>
+            Professional targeting and removal of stubborn stains home methods
+            cannot handle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📞 Contact Section -->
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <p>📍 Damaturu, Yobe State, Nigeria</p>
+      <p>📧 info@smartwash.com | ☎️ +234 9162260134</p>
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+      </div>
+    </section>
+
+    <!-- 🦶 Footer -->
+    <footer>
+      <p>&copy; 2025 SmartWash Laundry. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

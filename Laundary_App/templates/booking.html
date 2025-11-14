@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Laundry Collection</title>
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}" />
+  </head>
+  <body>
+    <!-- 🧺 Header -->
+
+    <div class="booking-container">
+      <h1>🧺 Book Your Laundry Collection</h1>
+      <form method="POST" action="/submit-booking/">
+        {% csrf_token %}
+        <label>Date:</label>
+        <input type="date" name="date" required />
+
+        <label>Time:</label>
+        <input type="time" name="time" required />
+
+        <label>Number of Clothes:</label>
+        <input type="number" name="quantity" min="1" required />
+
+        <label>Service Type:</label>
+        <select name="service">
+          <option value="wash">Wash Only</option>
+          <option value="wash_iron">Wash & Iron</option>
+          <option value="dry_clean">Dry Clean</option>
+        </select>
+
+        <button type="submit" class="book-btn">Book Now</button>
+      </form>
+
+      {% if booking_summary %}
+      <div class="summary-box">
+        <h2>Booking Summary</h2>
+        <p>{{ booking_summary }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

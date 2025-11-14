@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SmartWash Laundry</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+  </head>
+  <body>
+    <!-- ===== Header / Navbar ===== -->
+    <header class="navbar">
+      <div class="logo">SmartWash Laundry</div>
+      <ul class="nav-links">
+        <li><a href="{% url 'landing' %}">Home</a></li>
+        <li><a href="{% url 'service' %}">Services</a></li>
+        <li><a href="{% url 'booking' %}">Booking</a></li>
+        <li><a href="{% url 'pricing' %}">Pricing</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'logout' %}" class="logout-btn">logout</a></li>
+      </ul>
+    </header>
+
+    <!-- ===== Dashboard Content ===== -->
+    <section class="dashboard">
+      <h1>Welcome, {{ request.user.username }}!</h1>
+
+      <!-- Summary Cards -->
+      <div class="summary-cards">
+        <div class="card total-bookings">
+          <h3>Total Bookings</h3>
+          <p>{{ total_bookings }}</p>
+        </div>
+        <div class="card pending-bookings">
+          <h3>Pending Orders</h3>
+          <p>{{ pending_bookings }}</p>
+        </div>
+        <div class="card completed-bookings">
+          <h3>Completed Orders</h3>
+          <p>{{ completed_bookings }}</p>
+        </div>
+        <div class="card total-revenue">
+          <h3>Total Revenue</h3>
+          <p>₦{{ total_revenue }}</p>
+        </div>
+      </div>
+
+      <!-- Bookings Table -->
+      <div class="table-container">
+        <h2>Your Bookings</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Total Price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for booking in bookings %}
+            <tr>
+              <td>{{ booking.date }}</td>
+              <td>{{ booking.time }}</td>
+              <td>{{ booking.item|title }}</td>
+              <td>{{ booking.quantity }}</td>
+              <td>₦{{ booking.total }}</td>
+              <td>{{ booking.status }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="6">No bookings yet.</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <p>📍 Damaturu, Yobe State, Nigeria</p>
+      <p>📧 info@smartwash.com | ☎️ +234 9162260134</p>
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <p>&copy; 2025 SmartWash Laundry. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartWash Laundry</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+  </head>
+  <body>
+    <!-- 🧺 Header -->
+    <header class="navbar">
+      <div class="logo">SmartWash Laundry</div>
+      <ul class="nav-links">
+        <li><a href="{% url 'landing' %}">Home</a></li>
+        <li><a href="{% url 'login' %}" class="login-btn">Login</a></li>
+        <li><a href="{% url 'signup' %}" class="register-btn">Register</a></li>
+      </ul>
+    </header>
+
+    <!-- 🌈 Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Fast. Clean. Reliable Laundry Services at Your Doorstep 🧺</h1>
+        <p>
+          Let us handle the dirty work while you focus on what truly matters.
+          Pick-up, wash, iron, and delivery – all at your convenience.
+        </p>
+        <a href="{% url 'signup' %}" class="hero-btn">Book Now</a>
+      </div>
+    </section>
+
+    <!-- 💬 About Section -->
+    <section class="about">
+      <h2>About Us</h2>
+      <p>
+        At <strong>SmartWash Laundry</strong>, we provide professional washing,
+        ironing, and dry-cleaning services using modern machines and
+        eco-friendly detergents. Our goal is to make your clothes shine — fresh,
+        soft, and spotless!
+      </p>
+
+      <div class="about-features">
+        <div class="feature">
+          <img
+            src="{% static 'images/fast-delivery.png' %}"
+            alt="Fast Delivery"
+          />
+          <h3>Fast Delivery</h3>
+          <p>We pick up and deliver your laundry quickly — saving you time!</p>
+        </div>
+
+        <div class="feature">
+          <img
+            src="{% static 'images/eco-friendly.png' %}"
+            alt="Eco-Friendly"
+          />
+          <h3>Eco-Friendly</h3>
+          <p>
+            We use biodegradable detergents to protect your clothes and the
+            planet.
+          </p>
+        </div>
+
+        <div class="feature">
+          <img
+            src="{% static 'images/quality-care.png' %}"
+            alt="Quality Care"
+          />
+          <h3>Quality Care</h3>
+          <p>
+            Your garments are handled with care and cleaned by trained
+            professionals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🧩 Services Section -->
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card">
+          <img src="{% static 'images/wash.jpg' %}" alt="Washing" />
+          <h3>Washing</h3>
+          <p>Expert washing for all fabric types using quality detergents.</p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/iron.jpg' %}" alt="Washing" />
+          <h3>Ironing</h3>
+          <p>Perfectly pressed clothes — neat, clean, and wrinkle-free.</p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/sanitize.jpg' %}" alt="Washing" />
+          <h3>Ironing</h3>
+          <p>
+            kill germs, bacteria, and allergens, a critical feature for hospital
+            and hotel linens.
+          </p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/dry.jpg' %}" alt="Washing" />
+          <h3>Dry Cleaning</h3>
+          <p>
+            Professional dry-cleaning for suits, gowns, and delicate fabrics.
+          </p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/pickup.jpg' %}" alt="Washing" />
+          <h3>Pickup & Delivery</h3>
+          <p>We collect, clean, and deliver right to your doorstep.</p>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/stain.jpg' %}" alt="Washing" />
+          <h3>Ironing</h3>
+          <p>
+            Professional, target and remove stubborn stains that home methods
+            often cannot handle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💰 Pricing Section -->
+    <section class="pricing">
+      <h2>Our Prices</h2>
+      <table>
+        <tr>
+          <th>Service</th>
+          <th>Price (₦)</th>
+        </tr>
+        <tr>
+          <td>Washing (per kg)</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>Ironing (per cloth)</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>Dry Cleaning (per item)</td>
+          <td>800</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 💬 Testimonials -->
+    <section class="testimonials">
+      <h2>Why Choose Us?</h2>
+      <div class="testimonial-boxes">
+        <div class="box">
+          <h3>🚀 Fast Delivery</h3>
+          <p>Your laundry is delivered on time, every time!</p>
+        </div>
+        <div class="box">
+          <h3>💸 Affordable</h3>
+          <p>Quality service at pocket-friendly prices.</p>
+        </div>
+        <div class="box">
+          <h3>✨ Quality Wash</h3>
+          <p>We treat your clothes with utmost care and quality.</p>
+        </div>
+        <div class="box">
+          <h3>⏳ Save Time</h3>
+          <p>Complete task more quickly, efficiently and conserve time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📞 Contact Section -->
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <p>📍 Damaturu, Yobe State, Nigeria</p>
+      <p>📧 info@smartwash.com | ☎️ +234 9162260134</p>
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+      </div>
+    </section>
+
+    <!-- 🦶 Footer -->
+    <footer>
+      <p>&copy; 2025 SmartWash Laundry. All rights reserved.</p>
+    </footer>
+    {% comment %} script {% endcomment %}
+  </body>
+</html>
