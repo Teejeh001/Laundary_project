@@ -1,0 +1,252 @@
+/* ================================
+   SMARTWASH LAUNDRY SERVICE PAGE
+   Author: Teejeh
+   File: service.css
+   ================================ */
+
+/* ---------- GLOBAL STYLES ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: ghostwhite;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+
+nav .active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 3px;
+}
+
+/* ---------- SERVICES SECTION ---------- */
+.services-page {
+  text-align: center;
+  padding: 120px 40px 60px;
+  background-color: #f8f9fa;
+}
+
+.services-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.services-page p {
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+/* ---------- SERVICE CARDS ---------- */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  transition: transform 0.3s ease;
+  box-shadow: 0.3s ease;
+
+}
+
+/* Hover effect for service cards (like pricing cards) */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  color: #007bff;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.95rem;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 8px;
+  }
+
+  .services-page {
+    padding: 100px 20px 40px;
+  }
+
+  .service-card {
+    max-width: 100%;
+  }
+
+  .book-btn {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
+
+
+/* Booking Popup Form */
+.booking-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  animation: popupSlide 0.3s ease;
+}
+
+.popup-content h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content label {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.popup-content input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.close-btn {
+  float: right;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+@keyframes popupSlide {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
